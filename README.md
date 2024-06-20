@@ -6,3 +6,6 @@ This repository hosts the workflow used to carry out the spatial analysis, from 
 
 Forward any questions regarding this project and code base to Mikko Jimenez (miguel.jimenez@colostate.edu)
 
+## Folder Descriptions
+
+blah blah blah folders blah blah
