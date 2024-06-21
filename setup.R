@@ -14,7 +14,12 @@ packageLoad <-
 # create a string of package names 
 packages <- c('tidyverse',
               'dplyr',
-              'sf')
+              'sf',
+              'lubridate',
+              'terra',
+              'stringr',
+              'daymetr',
+              'tictoc')
 
 # run packageLoad function on packages string
 packageLoad(packages)
