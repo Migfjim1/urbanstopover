@@ -1,15 +1,14 @@
-setwd("~/Documents/prjct_georgia_on_my_mind/")
-
 rm(list = ls())
-sp_data_dir = "../georgia_data/"
+data_dir = "/Users/aeroeco_green/Library/Mobile Documents/com~apple~CloudDocs/Desktop/csu/phd/projects/urban stopover/urbanstopover_git/urbanstopover/data/"
+source("setup.R")
 source("aux_func.R")
 
 # Format bounding box to DayMet expected pattern (first upper left coordinates, 
 # then lower right coordinates):
-state_bbox_aea_daymet = c(state_bbox_aea[["ymax"]], 
-                          state_bbox_aea[["xmin"]], 
-                          state_bbox_aea[["ymin"]], 
-                          state_bbox_aea[["xmax"]])
+cbsa_bbox_aea_daymet = c(cbsa_bbox_aea[["ymax"]], 
+                         cbsa_bbox_aea[["xmin"]], 
+                         cbsa_bbox_aea[["ymin"]], 
+                         cbsa_bbox_aea[["xmax"]])
 
 #------------------------------------------------------------------------------#
 # Download and process DayMet data -----
@@ -17,30 +16,26 @@ state_bbox_aea_daymet = c(state_bbox_aea[["ymax"]],
 
 ## Data download (no need to run again) ----------------------------------------
 # 
-download_daymet_ncss(location = state_bbox_aea,
-                     path = paste0(sp_data_dir, "daymet/raw/"),
+download_daymet_ncss(location = cbsa_bbox_aea_daymet,
+                     path = paste0(data_dir, "daymet/raw"),
                      start = 2000,
                      end = 2021,
                      frequency = "daily",
                      param = "tmin")
 
-download_daymet_ncss(location = state_bbox_aea,
-                     path = paste0(sp_data_dir, "daymet/raw/"),
+download_daymet_ncss(location = cbsa_bbox_aea_daymet,
+                     path = paste0(data_dir, "daymet/raw"),
                      start = 2000,
                      end = 2021,
                      frequency = "daily",
                      param = "tmax")
 
-download_daymet_ncss(location = state_bbox_aea,
-                     path = paste0(sp_data_dir, "daymet/raw/"),
+download_daymet_ncss(location = cbsa_bbox_aea,
+                     path = paste0(data_dir, "daymet/raw"),
                      start = 2000,
                      end = 2021,
                      frequency = "daily",
                      param = "prcp")
-
-test = rast(paste0(sp_data_dir, "daymet/raw/prcp_daily_2000_ncss.nc"))
-
-plot(test)
             
 ## Create seasonal rasters per year --------------------------------------------
 

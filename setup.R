@@ -13,13 +13,26 @@ packageLoad <-
 
 # create a string of package names 
 packages <- c('tidyverse',
+              'tidyr',
               'dplyr',
               'sf',
               'lubridate',
               'terra',
               'stringr',
               'daymetr',
-              'tictoc')
+              'tictoc',
+              'data.table',
+              'terra',
+              'sf',
+              'ggspatial',
+              'scales',
+              'cowplot',
+              'ggplot2',
+              'GGally',
+              'stringr',
+              'caret',
+              'tictoc',
+              'viridis')
 
 # run packageLoad function on packages string
 packageLoad(packages)
