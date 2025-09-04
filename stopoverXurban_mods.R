@@ -6,12 +6,6 @@ data.dir<-"/Users/mikkojimenez/Desktop/urbanstopover_git/data"
 counties_df <- read.csv(file.path(data.dir, "counties_df.csv"))
 
 # mini data prep steps
-## prep a 'pop' predictor for a continuous model
-counties_df$pop<-counties_df$C_2012_
-counties_df$pop<-as.numeric(counties_df$pop)
-counties_df$scaled_pop <- scale(counties_df$pop)
-counties_df$log_pop <- log(counties_df$pop)
-counties_df$log_pop <- scale(counties_df$log_pop)
 ## make X2013_c ordinal
 counties_df$X2013_c <- factor(counties_df$X2013_c, levels = 6:1, ordered = TRUE)
 ## create flyway subsets
