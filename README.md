@@ -13,3 +13,5 @@ Forward any questions regarding this project and code base to Mikko Jimenez (mig
 **stopoverXurban_mods.R** - This script was used to fit and summarize models estimating the relationship between urbanization levels and migratory bird stopover densities at the county level. 
 
 **stopoverXincome_mods.R** - This script was used to fit and summarize models estimating the relationship between the proportion of high-income residents surrounding a park and its stopover density at the city- and continentual U.S.-levels. 
+
+Data for this analysis can be found at: http://datadryad.org/share/4uHpIyu9V0cokyDviVcjUtKQlL9IpDXvJ_S5rrQeSb8
