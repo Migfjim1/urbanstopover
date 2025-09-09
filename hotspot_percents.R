@@ -1,13 +1,19 @@
-source("setup.R")
+# source setip script to install/load necessary packages
+source("/Users/mjimenez/Downloads/urbanstopover-main/setup.R") # may need to change file path to where setup.R is stored
 
-### percent of stopover hotspots on metro areas
+# define filepath to data download - see Github README for Dryad DOI
+data_fold<-("/Users/mjimenez/Downloads/doi_10_5061_dryad_1jwstqk68__v20250908")
+
+### percent of stopover hotspots in metro areas
 # read in spring and fall hotspots
-hotspot_sp <- rast("data/stopover_tifs/spring_stopover_2500_v9_265_class.tif")
-hotspot_fa <- rast("data/stopover_tifs/fall_stopover_2500_v9_265_class.tif")
+hotspot_sp <- rast(file.path(data_fold, "spring_stopover_2500_v9_265_class.tif"))
+hotspot_fa <- rast(file.path(data_fold, "fall_stopover_2500_v9_265_class.tif"))
+
 # Read in counties shapefile
-counties_shp <- st_read("data/processed/counties.shp")
-cbsa_shp <- st_read("data/tl_2019_us_cbsa/tl_2019_us_cbsa.shp")
-urbcore_shp <- st_read("data/tl_2023_us_uac20/tl_2023_us_uac20.shp")
+counties_shp <- st_read(file.path(data_fold, "counties.shp/counties.shp"))
+cbsa_shp <- st_read(file.path(data_fold, "tl_2019_us_cbsa.shp/tl_2019_us_cbsa.shp"))
+urbcore_shp <- st_read(file.path(data_fold, "tl_2023_us_uac20.shp/tl_2023_us_uac20.shp"))
+
 # remove non-continental states
 counties_shp <- counties_shp[!counties_shp$STATEFP %in% c("02", "72", "15"), ]
 
@@ -16,6 +22,7 @@ proj_crs <- "EPSG:5070"
 counties_shp <- st_transform(counties_shp, proj_crs)
 urbcore_shp <- st_transform(urbcore_shp, proj_crs)
 cbsa_shp <- st_transform(cbsa_shp, proj_crs)
+
 
 ## create the stopover hotspot layers
 # write a function that takes hotspot raster, converts to sf polygon
@@ -31,6 +38,7 @@ hotspot_fa_sf <- st_transform(hotspot_fa_sf, proj_crs)
 hotspot_sp_sf <- st_transform(hotspot_sp_sf, proj_crs)
 # just a little viz check to make sure this looks right
 #plot(hotspot_sp_sf, col = "red", border = NA)
+
 
 ## create different urban boundary layer (i.e. different definitions of "urban")
 # using CDC definitions
