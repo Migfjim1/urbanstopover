@@ -12,7 +12,7 @@ Forward any questions regarding this project and code base to Mikko Jimenez (mig
 
 **stopoverXurban_mods.R** - This script was used to fit and summarize models estimating the relationship between urbanization levels and migratory bird stopover densities at the county level. Expected run time ~5 minutes.
 
-**stopoverXincome_mods.R** - This script was used to fit and summarize models estimating the relationship between the proportion of high-income residents surrounding a park and its stopover density at the city- and continentual U.S.-levels. Expected run time ~5 hours. 
+**stopoverXincome_mods.R** - This script was used to fit and summarize models estimating the relationship between the proportion of high-income residents surrounding a park and its stopover density at the city- and continentual U.S.-levels. Expected run time ~16 hours. 
 
 *All scripts have been test in R Versions 2024.04.2+764 (2024.04.2+764) and 2025.05.1+513 (2025.05.1+513)
 
