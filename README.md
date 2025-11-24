@@ -2,7 +2,7 @@
 
 This repository hosts the workflow used to carry out the spatial analysis for the study 'Divergent Effects of Urbanization and Social Landscapes on Continental Migratory Bird Stopover'. 
 
-Forward any questions regarding this project and code base to Mikko Jimenez (miguel.jimenez@colostate.edu)
+Forward any questions regarding this project and code base to Mikko Jimenez (migfjimenez@gmail.com)
 
 ## Description of scripts
 
