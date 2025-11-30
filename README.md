@@ -1,6 +1,6 @@
 # Urban Stopover Analysis Using NEXRAD
 
-This repository hosts the workflow used to carry out the spatial analysis for the study 'Divergent Effects of Urbanization and Social Landscapes on Continental Migratory Bird Stopover'. 
+This repository hosts the workflow used to carry out the spatial analysis for the study 'Migratory Bird Stopover Patterns Linked to Urbanization and Social Landscapes'. 
 
 Forward any questions regarding this project and code base to Mikko Jimenez (migfjimenez@gmail.com)
 
